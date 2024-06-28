@@ -17,7 +17,7 @@ const About = () => {
   }, [])
 
   return (
-    <section id="about" className=" min-h-screen pb-20 overflow-hidden w-full flex flex-col items-center snap-center">
+    <section id="about" className=" relative z-10 min-h-screen pb-20 overflow-hidden w-full flex flex-col items-center snap-center">
       <span ref={heading} className=" sctext-transparent duration-500 transition-all text-5xl font-bold mt-20">About</span>
       <p ref={para} className="text-justify text-transparent duration-500 transition-all w-11/12 max-w-[725px] mt-10 text-sm">
         I am a passionate Computer Application undergraduate student at Narula

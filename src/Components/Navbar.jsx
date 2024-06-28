@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 
 const Navbar = () => {
-    const [isMenuVisible, setIsMenuVisible] = useState(false)
+    const [isMenuVisible, setIsMenuVisible] = useState(window.innerWidth>=768)
     const listContainer = useRef()
     const hamBurger = useRef()
 
@@ -9,12 +9,12 @@ const Navbar = () => {
       document.body.addEventListener('click', (e)=>{
         if(!listContainer.current.contains(e.target) && !hamBurger.current.contains(e.target) && window.innerWidth<=768)setIsMenuVisible(false)
       })
-    window.addEventListener('resize', ()=>{
-        if(window.innerWidth>=768){
-            setIsMenuVisible(true);
-        }
-        hamBurger.current.classList.toggle('hidden', window.innerWidth>=768)
-    })
+      window.addEventListener('resize', ()=>{
+          if(window.innerWidth>=768){
+              setIsMenuVisible(true);
+          }
+          hamBurger.current.classList.toggle('hidden', window.innerWidth>=768)
+      })
     }, [])
     
 
@@ -30,12 +30,12 @@ const Navbar = () => {
       >
         Sumit Das
       </span>
-      <span ref={hamBurger} onClick={()=>setIsMenuVisible(!isMenuVisible)} className={`${isMenuVisible?"justify-center":"justify-between"} w-7 h-6 mr-[4%] flex flex-col items-center cursor-pointer`}>
-        <span className={` ${isMenuVisible && 'rotate-45 relative top-[0.125rem]'} duration-300 transition-all block w-full bg-[#727272] h-1 rounded-full`}></span>
-        {!isMenuVisible && <span className={` inline-block w-full bg-[#727272] h-1 rounded-full`}></span>}
-        <span className={` ${isMenuVisible && '-rotate-45 relative bottom-[0.125rem]'} duration-300 transition-all inline-block w-full bg-[#727272] h-1 rounded-full`}></span>
-      </span>
-      <ul ref={listContainer} onClick={()=>setIsMenuVisible(!isMenuVisible)}  className={` ${isMenuVisible && 'scale-100' || 'scale-0 -top-4 -right-10'} md:text-sm lg:text-base transition-all duration-300 bg-white md:w-max md:flex-row md:relative md:left-0 md:top-0 md:shadow-none md:bg-transparent rounded-sm  overflow-hidden flex flex-col absolute top-14 right-2 w-48 shadow-md shadow-[#0000006e] justify-center items-center text-center`}>
+      <div ref={hamBurger} onClick={()=>setIsMenuVisible(!isMenuVisible)} className={`${isMenuVisible?"justify-center":"justify-between"} ${window.innerWidth>=768 && 'hidden'} w-7 h-6 mr-[4%] flex flex-col items-center cursor-pointer`}>
+        <span className={` ${isMenuVisible && 'rotate-45 relative top-[0.125rem]'} duration-200 transition-all block w-full bg-[#727272] h-1 rounded-full`}></span>
+        <span className={` ${isMenuVisible && 'hidden'} inline-block w-full bg-[#727272] h-1 rounded-full`}></span>
+        <span className={` ${isMenuVisible && '-rotate-45 relative bottom-[0.125rem]'} duration-200 transition-all inline-block w-full bg-[#727272] h-1 rounded-full`}></span>
+      </div>
+      <ul ref={listContainer} onClick={()=>setIsMenuVisible(window.innerWidth>=768?true:false)}  className={` ${isMenuVisible && 'scale-100' || 'scale-0 -top-4 -right-10'} md:text-sm lg:text-base transition-all duration-200 bg-white md:w-max md:flex-row md:relative md:left-0 md:top-0 md:shadow-none md:bg-transparent rounded-sm  overflow-hidden flex flex-col absolute top-14 right-2 w-48 shadow-md shadow-[#0000006e] justify-center items-center text-center`}>
         <a href="#home" className="border-b  border-gray-300 md:border-none inline-block w-full">
           <li className=" mr-2 p-2 active:underline cursor-pointer hover:text-[#f55d56] transition-all hover:scale-110">
             Home

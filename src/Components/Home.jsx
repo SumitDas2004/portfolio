@@ -17,8 +17,8 @@ const Home = () => {
   }, []);
 
   return (
-    <section id="home" className=" snap-start h-full w-full flex justify-center items-center flex-col">
-      <div className=" px-20 flex flex-wrap w-full justify-center items-center">
+    <section id="home" className=" relative z-10 snap-start h-full w-full flex justify-center items-center flex-col">
+      <div className=" px-10 flex flex-wrap w-full justify-center items-center">
         <span
           style={{
             animation: "profilePictureAnimation",
@@ -30,16 +30,14 @@ const Home = () => {
           <img
             ref={image}
             src={profile}
-            alt=""
-            srcSet=""
             className=" duration-1000 transition-all"
           />
         </span>
-        <div className="mt-10 flex flex-col mx-10">
+        <div className="mt-10 flex flex-col ml-8">
           <span className="flex ">
             <span className="text-lg font-semibold">Hi!</span>{" "}
             <span className="text-base ml-2">I'm</span>{" "}
-            <span className=" text-3xl font-bold ml-3">
+            <span className=" text-3xl font-bold ml-3 inline-block w-max">
               {isVisible ? (
                 <Random
                   text={`Sumit Das`}

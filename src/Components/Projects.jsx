@@ -17,7 +17,7 @@ const Projects = () => {
     })
   }, [])
   return (
-    <section id="projects" ref = {container} className="  h-max pb-20 w-full snap-start flex flex-col items-center">
+    <section id="projects" ref = {container} className=" relative z-10 h-max pb-20 w-full snap-center flex flex-col items-center">
       <span className=" duration-500 transition-all text-5xl font-bold mt-20 mb-10">
         Projects
       </span>

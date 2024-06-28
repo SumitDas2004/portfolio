@@ -20,7 +20,7 @@ const Skills = () => {
   
 
   return (
-    <section id="skills" ref = {container} className=" pb-16 w-full snap-start flex flex-col items-center">
+    <section id="skills" ref = {container} className=" relative z-10 pb-16 w-full snap-start flex flex-col items-center">
       <span className=" duration-500 transition-all text-5xl font-bold mt-20 mb-10">
         Skills
       </span>
