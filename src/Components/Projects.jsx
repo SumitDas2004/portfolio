@@ -4,7 +4,7 @@ const Projects = () => {
   const container = useRef()
 
   const observer = new IntersectionObserver(entries=>{
-    entries.forEach((entry, index)=>{
+    entries.forEach((entry)=>{
       entry.target.classList.toggle('scale-50', !entry.isIntersecting)
         entry.target.classList.toggle('text-transparent', !entry.isIntersecting)
 
@@ -22,6 +22,52 @@ const Projects = () => {
         Projects
       </span>
       {/* Projcet cards */}
+      <div className="flip-card cursor-pointer p-2">
+          <div className="flip-card-inner">
+            <div className="flip-card-front">
+              <p className="title">Doodles<sub className="text-xs font-light">(Jun-Jul 2024)</sub></p>
+              <p className=" mx-2">
+              Built a real-time, multiplayer game (2-8 players) where users connect over a network to draw and guess. One player
+              acts as the artist, sketching a concept on a shared canvas, while others try to guess it.</p>
+            </div>
+            <div className="flip-card-back text-left">
+              <p className="title">Tech Stack</p>
+              <p className="text-xs ml-2 mt-2">
+                <strong>Frontend:</strong> Javascript, ReactJs, TailwindCSS, STOMP JS
+              </p>
+              <p className="text-xs ml-2">
+                <strong>Backend:</strong> JAVA, SpringBoot, WebSockets
+              </p>
+              <span className="flex mt-4 justify-center">
+              <a
+                  href="https://doodlefrontend.vercel.app"
+                  target="_blank"
+                  className="mx-1"
+                >
+                  <span
+                    title="link"
+                    className=" flex justify-center items-center h-8 w-8 rounded-full bg-white hover:bg-blue-500 hover:text-white hover:scale-110 transition-all border-2 border-white "
+                  >
+                    <i className="fa-solid fa-link"></i>
+                  </span>
+                </a>
+                <a
+                  href="https://github.com/SumitDas2004/Doodle"
+                  target="_blank"
+                  className="mx-1"
+                >
+                  <span
+                    title="link"
+                    className=" flex justify-center items-center h-8 w-8 rounded-full bg-white hover:bg-black hover:text-white hover:scale-110 transition-all border-2 border-white "
+                  >
+                    <i className="fa-brands fa-github"></i>
+                  </span>
+                </a>
+
+              </span>
+            </div>
+          </div>
+        </div>
       <div className=" duration-500 transition-all flex flex-wrap justify-center items-start w-5/6">
         <div className="flip-card cursor-pointer p-2">
           <div className="flip-card-inner">
@@ -96,39 +142,6 @@ const Projects = () => {
                     <i className="fa-brands fa-github"></i>
                   </span>
                 </a>
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className="flip-card cursor-pointer p-2">
-          <div className="flip-card-inner">
-            <div className="flip-card-front">
-              <p className="title">Doodles<sub className="text-xs font-light">(Ongoing)</sub></p>
-              <p className=" mx-2">
-               Doodles is a multiplayer game where players can connect and play on realtime basis. 
-               </p>
-            </div>
-            <div className="flip-card-back text-left">
-              <p className="title">Tech Stack</p>
-              <p className="text-xs ml-2 mt-2">
-                <strong>Frontend:</strong> Javascript, ReactJs, TailwindCSS, STOMP JS
-              </p>
-              <p className="text-xs ml-2">
-                <strong>Backend:</strong> JAVA, SpringBoot, WebSockets
-              </p>
-              <span className="flex mt-4 justify-center">
-                {/* <a
-                  href="https://sumitdas2004.github.io/shortyfrontend/"
-                  target="_blank"
-                  className="mx-1"
-                >
-                  <span
-                    title="link"
-                    className=" flex justify-center items-center h-8 w-8 rounded-full bg-white hover:bg-black hover:text-white hover:scale-110 transition-all border-2 border-white "
-                  >
-                    <i className="fa-brands fa-github"></i>
-                  </span>
-                </a> */}
               </span>
             </div>
           </div>
