@@ -8,7 +8,7 @@ import Navbar from './Components/Navbar'
 import { textFlag } from 'cursor-effects'
 
 function App() {
-  new textFlag({text: "Have a nice day!",color:["#f55d56"]});
+  new textFlag({text: "Have a nice day!",color:["#f55e5670"]});
   return (
     <div className=' scroll-smooth bg-[#fcffa0] overflow-x-hidden snap-both snap-mandatory h-screen w-screen overflow-y-scroll'>
       <Navbar/>

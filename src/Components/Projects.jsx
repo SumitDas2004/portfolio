@@ -26,7 +26,7 @@ const Projects = () => {
           <div className="flip-card-inner">
             <div className="flip-card-front">
               <p className="title">Doodles<sub className="text-xs font-light">(Jun-Jul 2024)</sub></p>
-              <p className=" mx-2">
+              <p className=" mx-2 text-xs text-center max-h-[80%]">
               Built a real-time, multiplayer game (2-8 players) where users connect over a network to draw and guess. One player
               acts as the artist, sketching a concept on a shared canvas, while others try to guess it.</p>
             </div>
@@ -119,7 +119,7 @@ const Projects = () => {
           <div className="flip-card-inner">
             <div className="flip-card-front">
               <p className="title">CanvasBids<sub className="text-xs font-light">(May,2024)</sub></p>
-              <p className=" mx-2 text-xs max-h-[80%]">
+              <p className=" mx-2">
                 Developed backend for a platform focused around artists where artists can post their artworks for auction.
               </p>
             </div>
