@@ -119,7 +119,7 @@ const Projects = () => {
           <div className="flip-card-inner">
             <div className="flip-card-front">
               <p className="title">CanvasBids<sub className="text-xs font-light">(May,2024)</sub></p>
-              <p className=" mx-2 text-sm max-h-[80%] overflow-y-auto">
+              <p className=" mx-2 text-xs max-h-[80%]">
                 Developed backend for a platform focused around artists where artists can post their artworks for auction.
               </p>
             </div>
