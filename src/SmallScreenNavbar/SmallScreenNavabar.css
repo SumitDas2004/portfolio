@@ -1,0 +1,10 @@
+.bottomNavbarButtonsActive, .bottomNavbarButtonsActive:active{
+    background:linear-gradient(220deg, rgb(0, 221, 255) 0%, rgba(255,0,233,1) 100%);
+}
+
+.bottomNavbarButtons:hover{
+    scale:1.2;
+}
+.container:hover .bottomNavbarButtons:not(:has(:hover)){
+    scale:0.8;
+}

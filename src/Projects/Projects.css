@@ -1,0 +1,169 @@
+.mainContainer{
+    transform: perspective(100vw);
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.mainContainer img{
+    transition: 0.2s linear;
+}
+
+.flipper{
+    transition: 0.5s ease-in;
+    transform-style: preserve-3d;
+}
+
+.rear{
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: 0.2s linear;
+    background:url(https://img.freepik.com/free-photo/colorful-abstract-nebula-space-background_53876-111355.jpg?w=996&t=st=1724841489~exp=1724842089~hmac=4faf61aadc92d3ad432b83e04959f0e9161e1721d0a800286e23081bbe85c184);
+    background-size: cover;
+}
+
+.rear:hover, .frontButtonContainer:hover ~ .front{
+    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.674);
+}
+
+.rear button{
+    background-color: transparent;
+    color: white;
+    border: 4px solid white;
+    border-radius: 4px;
+    width: 80px;
+    aspect-ratio: 2/1;
+    text-align: center;
+    transition: 0.2s ease-in;
+    font-size: 1.2rem;
+}
+
+.rear button:hover{
+    border: none;
+    background-color:rgb(50, 187, 255);
+    color: white;
+}
+
+.front{
+    backface-visibility: hidden;
+}
+
+.mainContainer:hover .front img{
+    scale: 1.05;
+}
+
+.frontButtonContainer{
+    backface-visibility: hidden;
+    transform: translateZ(8vw);
+}
+
+
+.mainContainer .front::after{
+    content: "";
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    z-index: 20;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transition: 0.2s linear;
+}
+
+.mainContainer:hover .front::after{
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.mainContainer:hover .frontButtonContainer{
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+.shootingStar{
+    z-index: -10;
+    height:4px;
+    width: 4px;
+    background-color: white;
+    position: absolute;
+    border-radius: 1000px;
+    animation: shootingStar 4s infinite linear;
+    pointer-events: none;
+    opacity: 0.8;
+    opacity: 0;
+}
+.shootingStar::after{
+    content: "";
+    display: block;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0) 11%, rgba(255,255,255,1) 100%);
+    height:1px;
+    width: 150px;
+    position: relative;
+    top:1px;
+}
+
+
+@keyframes shootingStar {
+    from{
+        opacity: 1;
+        transform:rotateZ(325deg) translateY(0px) translateX(0px);
+    }
+    to{
+        opacity: 1;
+        transform:rotateZ(325deg) translateX(-1000px) translateY(0px);
+    }
+}
+
+.rear .description::-webkit-scrollbar-thumb{
+    background-color: rgba(255, 255, 255, 0.377);
+}
+.rear .description::-webkit-scrollbar{
+    background-color: rgba(0, 0, 0, 0.001);
+}
+
+.heading{
+    background:linear-gradient(220deg, rgb(0, 221, 255) 0%, rgba(255,0,233,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+}
+.front{
+    background: rgb(0,10,255);
+    background: linear-gradient(45deg, rgb(38, 45, 255) 0%, rgb(2, 2, 109) 14%, rgb(3, 0, 51) 100%);
+}
+
+
+
+.leftToRightAnimation{
+    opacity: 0;
+    animation: leftToRight forwards ease-in;
+    animation-timeline: view();
+}
+@keyframes leftToRight {
+    from{
+        opacity: 0;
+        transform: translateX(-50vw);
+    }
+    40%, 100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.rightToLeftAnimation{
+    opacity: 0;
+    animation: rightToLeft forwards ease-in;
+    animation-timeline: view();
+}
+@keyframes rightToLeft {
+    from{
+        opacity: 0;
+        transform: translateX(50vw);
+    }
+    40%, 100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}

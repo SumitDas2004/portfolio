@@ -1,0 +1,114 @@
+:root{
+    --purple:  rgb(149, 51, 254);
+}
+
+
+
+/* Home page animations */
+
+
+.wavingHandAnimation{
+    animation: wavingHand 800ms infinite linear;
+}
+
+@keyframes wavingHand {
+    0%{
+        transform: rotate(0deg) scale(0.9);
+    }
+    33%{
+        transform:rotate(60deg) scale(1.1) translateY(5px, -10px);
+    }
+    66%{
+        transform:rotate(60deg) translate(5px, -10px) scale(1.1);
+    }
+    100%{
+        transform: rotate(0deg) scale(0.9);
+    }
+}
+
+.cursorPuleAnimation{
+    opacity: 1;
+    animation: cursorPulse 1s infinite linear;
+
+}
+
+@keyframes cursorPulse {
+    50%{
+        opacity:0
+    }
+}
+
+
+
+
+.bgYellowBlackYellowAnimation{
+    background: var(--purple);
+    animation: yellowBlackYellow forwards linear;
+    animation-timeline: view();
+}
+
+@keyframes yellowBlackYellow {
+    0%{
+        background: var(--purple);
+    }
+    50%{
+        background:black;
+    }
+    100%{
+        background: var(--purple);
+    }
+}
+
+.bgYellowBlackAnimation{
+    background: var(--purple);
+    animation: yellowBlack forwards linear;
+    animation-timeline: view();
+}
+
+@keyframes yellowBlack {
+    0%{
+        background: var(--purple);
+    }
+    50%, 100%{
+        background:black;
+    }
+}
+
+
+
+.bgBlackYellowBlackAnimation{
+    background: black;
+    animation: blackYellowBlack forwards linear;
+    animation-timeline: view();
+}
+
+@keyframes blackYellowBlack {
+    0%{
+        background: black;
+    }
+    50%{
+        background: var(--purple);
+    }
+    100%{
+        background: black;
+    }
+}
+
+.popUpAnimation {
+    transform: translateY(200px);
+    animation: popUp forwards;
+    animation-timeline: view();
+}
+
+@keyframes popUp {
+    0%{
+        scale:0;
+        opacity: 0;
+        transform: translateY(200px);
+    }
+    50%, 100%{
+        opacity: 1;
+        scale:1;
+        transform: translateY(0px);
+    }
+}
