@@ -18,7 +18,7 @@ const About = ({setSelected}) => {
   }, []);
   return (
     <section ref={ref} id="about" className=" h-screen w-full bgBlackYellowBlackAnimation flex justify-center  items-center flex-col">
-      <span className="popUpAnimation font-bold text-white text-5xl mb-10">
+      <span style={{fontFamily:"gill sans nova shadowed"}} className="popUpAnimation font-bold text-white text-5xl mb-10">
         About me
       </span>
       <div className=" rounded-lg popUpAnimation relative w-11/12 max-w-[700px] overflow-hidden">

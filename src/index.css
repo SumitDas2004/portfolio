@@ -32,4 +32,10 @@ iframe{
     background-color: #f7ead2;
 }
 
+#about ::-webkit-scrollbar{
+    background-color: transparent;
+}
+#about ::-webkit-scrollbar-thumb{
+    background-color: #f7ead27b;
+}
 

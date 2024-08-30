@@ -17,7 +17,7 @@ const Contact = ({setSelected}) => {
     return ()=>observer.disconnect()
   }, [])
   return (
-    <div ref = {ref} id="contact" className="bg-black relative overflow-clip h-full w-full flex items-center flex-col">
+    <div ref = {ref} id="contact" className="bg-black relative overflow-clip h-full w-full flex justify-center items-center flex-col">
           <span style={{right:`${Math.round(Math.random()*1000%(window.innerWidth*90/100))}px`, top:`${Math.round(Math.random()*1000%(window.innerHeight*90/100))}px`, animationDelay:`${Math.random()*10%4}s`,}} className={`shootingStar z-10`}></span>
           <span style={{right:`${Math.round(Math.random()*1000%(window.innerWidth*90/100))}px`, top:`${Math.round(Math.random()*1000%(window.innerHeight*90/100))}px`, animationDelay:`${Math.random()*10%4}s`,}} className={`shootingStar z-10`}></span>
           <span style={{right:`${Math.round(Math.random()*1000%(window.innerWidth*90/100))}px`, top:`${Math.round(Math.random()*1000%(window.innerHeight*90/100))}px`, animationDelay:`${Math.random()*10%4}s`,}} className={`shootingStar z-10`}></span>
@@ -33,10 +33,10 @@ const Contact = ({setSelected}) => {
           <span style={{right:`${Math.round(Math.random()*1000%(window.innerWidth*90/100))}px`, top:`${Math.round(Math.random()*1000%(window.innerHeight*90/100))}px`, animationDelay:`${Math.random()*10%4}s`,}} className={`shootingStar z-10`}></span>
           <span style={{right:`${Math.round(Math.random()*1000%(window.innerWidth*90/100))}px`, top:`${Math.round(Math.random()*1000%(window.innerHeight*90/100))}px`, animationDelay:`${Math.random()*10%4}s`,}} className={`shootingStar z-10`}></span>
 
-      <span className=" mt-28 heading font-bold text-5xl z-30 popUpAnimation">Contact me</span>
+      <span className=" absolute top-36  heading font-bold text-5xl z-30 popUpAnimation">Contact me</span>
 
       {/* Contact buttons container */}
-      <div className=" contactButtons transition-all mt-40 z-30 flex justify-center items-center gap-4 w-full h-min flex-wrap">
+      <div className=" contactButtons transition-all z-30 flex justify-center items-center gap-4 w-fit h-min flex-wrap">
         {/* linkedin */}
         <a target="_blank" href="https://linkedin.com/in/sumit-das-sumitdas" className="cursor-pointer">
           <div className=" cursor-pointer w-16 aspect-square rounded-full p-1">
