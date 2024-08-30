@@ -55,7 +55,7 @@ const TopNavbar = ({ selected }) => {
             </button>
           </a>
         </div>
-        <a href="/src/assets/SumitDasResume.pdf" download>
+        <a href="/SumitDasResume.pdf" download>
           <SpaceThemedButton value="Resume" />
         </a>
       </div>
