@@ -1,9 +1,23 @@
 import React from "react";
 import "../animation.css";
+import { useEffect, useRef } from "react";
 
-const About = () => {
+const About = ({setSelected}) => {
+  const ref = useRef(3);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((elm) => {
+      if (elm[0].isIntersecting) {
+        setSelected(2);
+      }
+    },{
+      threshold:0.5
+    });
+    observer.observe(ref.current)
+    return () => observer.disconnect();
+  }, []);
   return (
-    <section id="about" className=" h-screen w-full bgBlackYellowBlackAnimation flex justify-center  items-center flex-col">
+    <section ref={ref} id="about" className=" h-screen w-full bgBlackYellowBlackAnimation flex justify-center  items-center flex-col">
       <span className="popUpAnimation font-bold text-white text-5xl mb-10">
         About me
       </span>

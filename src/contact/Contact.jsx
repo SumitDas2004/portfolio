@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "../Projects/Projects.css"
 import "./Contact.css"
 
-const Contact = () => {
+const Contact = ({setSelected}) => {
+  const ref = useRef()
+
+  useEffect(()=>{
+    const observer = new IntersectionObserver(elm=>{
+      if(elm[0].isIntersecting){
+        setSelected(5)
+      }
+    },{
+      threshold:0.5
+    })
+    observer.observe(ref.current)
+    return ()=>observer.disconnect()
+  }, [])
   return (
-    <div id="contact" className="bg-black relative overflow-clip h-full w-full flex items-center flex-col">
+    <div ref = {ref} id="contact" className="bg-black relative overflow-clip h-full w-full flex items-center flex-col">
           <span style={{right:`${Math.round(Math.random()*1000%(window.innerWidth*90/100))}px`, top:`${Math.round(Math.random()*1000%(window.innerHeight*90/100))}px`, animationDelay:`${Math.random()*10%4}s`,}} className={`shootingStar z-10`}></span>
           <span style={{right:`${Math.round(Math.random()*1000%(window.innerWidth*90/100))}px`, top:`${Math.round(Math.random()*1000%(window.innerHeight*90/100))}px`, animationDelay:`${Math.random()*10%4}s`,}} className={`shootingStar z-10`}></span>
           <span style={{right:`${Math.round(Math.random()*1000%(window.innerWidth*90/100))}px`, top:`${Math.round(Math.random()*1000%(window.innerHeight*90/100))}px`, animationDelay:`${Math.random()*10%4}s`,}} className={`shootingStar z-10`}></span>

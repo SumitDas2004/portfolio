@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import "./Projects.css";
 import SpaceThemedButton from "../spaceThemedButton/SpaceThemedButton";
 
@@ -9,11 +9,10 @@ const ProjectCard = ({ description, name, github, deployment, image, className }
 
   const ref = useRef();
   return (
-    <div ref={ref} className={`${className} mt-8  mainContainer aspect-video w-11/12 min-h-[300px] max-w-[550px]`}>
-      <div className="  flipper relative h-full w-full rounded-lg">
+    <div ref={ref} className={`${className} mt-8 cursor-pointer mainContainer aspect-video w-11/12 min-h-[300px] max-w-[550px]`}>
+      <div className={` flipper relative h-full w-full rounded-lg`}>
         {/* The front most div element that contains the details button */}
         <div className="frontButtonContainer opacity-0 duration-200 h-full w-full absolute top-0 left-0 flex justify-center items-center z-20">
-          {/* <button onClick={e=>e.target.parentNode.parentNode.style.transform="rotateY(180deg)"}></button> */}
           <SpaceThemedButton
             onClick={(e) =>
               (e.target.parentNode.parentNode.style.transform =
@@ -26,7 +25,7 @@ const ProjectCard = ({ description, name, github, deployment, image, className }
         <div
           className=" bg-[#000021] front flex justify-center items-center overflow-hidden h-full w-full absolute rounded-lg"
         >
-          <span style={{"WebkitTextStroke":"2px #00000035"}} className="absolute text-3xl text-[#00000000] font-bold">{name}</span>
+          <span style={{"WebkitTextStroke":"1px #00000050", fontFamily: "gill sans nova inline"}} className="absolute text-3xl text-[#00000000] font-bold">{name}</span>
           <img
             className=" object-contain justify-center items-center h-full w-full"
             src={image}
@@ -52,7 +51,7 @@ const ProjectCard = ({ description, name, github, deployment, image, className }
 
           {/*project navigation bar */}
           <div className="text-white absolute top-0 w-full flex flex-row items-center justify-between px-4 py-3">
-            <span className="inline-block text-xl font-bold">{name}</span>
+            <span style={{fontFamily:"gill sans nova shadowed"}} className="inline-block text-xl font-bold">{name}</span>
 
             <span className="flex gap-2">
               <a target="_blank" href={github}>

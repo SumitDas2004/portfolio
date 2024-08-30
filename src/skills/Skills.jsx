@@ -1,13 +1,28 @@
 import React from "react";
 import "./Skills.css";
 import "../animation.css";
+import { useEffect, useRef } from "react";
 
-const Skills = () => {
+const Skills = ({setSelected}) => {
+  const ref = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((elm) => {
+      if (elm[0].isIntersecting) {
+        setSelected(3);
+      }
+    },{
+      threshold:0.5
+    });
+    observer.observe(ref.current)
+    return () => observer.disconnect();
+  }, []);
   return (
-    <section id="skills" className="relative h-screen w-full bgYellowBlackAnimation flex justify-center  items-center flex-col">
+    <section id="skills" ref={ref} className="relative h-screen w-full bgYellowBlackAnimation flex justify-center  items-center flex-col">
       
       <div className=" mt-20  popUpAnimation w-full flex justify-center items-center">
-      <span style={{top:'calc(50% - 30px)', "WebkitTextStroke":"1.5px rgba(190 190 190)"}}  className="text-gold text-[8rem] sm:text-[10rem] absolute after:content-['Skills'] after:absolute after:left-0 after:z-10 after:text-transparent ">Skills</span>
+        {/* heading */}
+      <span  style={{top:'calc(50% - 30px)', "WebkitTextStroke":"1.5px rgba(190 190 190)", "fontFamily":"gill sans nova inline"}}  className="text-gold text-[6rem] sm:text-[8rem] absolute after:content-['Skills'] after:absolute after:left-0 after:z-10 after:text-transparent ">Skills</span>
         <div className="slider z-10" style={{ "--quantity": skills.length }}>
           {skills.map((logo, ind) => (
             <img key={ind} src={logo} style={{ "--index": ind }} />
@@ -39,5 +54,5 @@ const skills = [
   "https://img.icons8.com/?size=100&id=lhwQTv6iwznO&format=png&color=000000",
   "https://img.icons8.com/?size=100&id=cdYUlRaag9G9&format=png&color=000000",
   "https://img.icons8.com/?size=100&id=3VGtaw5gCc8T&format=png&color=000000",
-  "https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=000000",
+  "https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=FFFFFF",
 ];

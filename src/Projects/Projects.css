@@ -1,5 +1,5 @@
 .mainContainer{
-    transform: perspective(100vw);
+    perspective: 1000px;
     transform-style: preserve-3d;
     cursor: pointer;
 }
@@ -17,7 +17,7 @@
     transform: rotateY(180deg);
     backface-visibility: hidden;
     transition: 0.2s linear;
-    background:url(https://img.freepik.com/free-photo/colorful-abstract-nebula-space-background_53876-111355.jpg?w=996&t=st=1724841489~exp=1724842089~hmac=4faf61aadc92d3ad432b83e04959f0e9161e1721d0a800286e23081bbe85c184);
+    background:url(../assets/projectCard.jpg);
     background-size: cover;
 }
 
@@ -53,7 +53,7 @@
 
 .frontButtonContainer{
     backface-visibility: hidden;
-    transform: translateZ(8vw);
+    transform: translateZ(150px);
 }
 
 
@@ -127,6 +127,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
+    font-family: gill sans nova inline;
 
 }
 .front{
@@ -137,8 +138,7 @@
 
 
 .leftToRightAnimation{
-    opacity: 0;
-    animation: leftToRight forwards ease-in;
+    animation: leftToRight ease-in;
     animation-timeline: view();
 }
 @keyframes leftToRight {
@@ -153,8 +153,7 @@
 }
 
 .rightToLeftAnimation{
-    opacity: 0;
-    animation: rightToLeft forwards ease-in;
+    animation: rightToLeft ease-in;
     animation-timeline: view();
 }
 @keyframes rightToLeft {

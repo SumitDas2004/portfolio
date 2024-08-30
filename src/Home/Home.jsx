@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "../animation.css";
 import "./Home.css"
 
-const Home = () => {
+const Home = ({setSelected}) => {
   const [i, setI] = new useState(0);
   const [j, setJ] = new useState(0);
   const [role, setRole] = new useState("");
@@ -45,13 +45,27 @@ const Home = () => {
 
     return () => clearTimeout(timeout);
   }, [j]);
+
+  const ref = useRef()
+
+  useEffect(()=>{
+    const observer = new IntersectionObserver(elm=>{
+      if(elm[0].isIntersecting){
+        setSelected(1)
+      }
+    },{
+      threshold:0.5
+    })
+    observer.observe(ref.current)
+    return ()=>observer.disconnect()
+  }, [])
   return (
-    <div id="home" className="h-screen w-full flex lg:flex-row flex-col items-center justify-center bg-black bgYellowBlackYellowAnimation">
+    <div id="home" ref={ref} className="h-screen w-full flex lg:flex-row flex-col items-center justify-center bg-black bgYellowBlackYellowAnimation">
       <iframe
         className=" scale-[0.8] sm:scale-100 h-[60vh] w-[60vh] order-2 lg:order-none"
         src="https://lottie.host/embed/3a1538fe-3558-4250-b5f6-f5193277f1b8/KngzO7IQvY.json"
       ></iframe>
-      <span className="-mb-20 lg:mb-0 flex flex-col  w-[28rem] scale-[0.75] sm:scale-100">
+      <span className="-mb-20 lg:mb-0 flex flex-col  w-[29rem] scale-[0.75] sm:scale-100">
         <span className=" mb-2 text-xl w-fit text-white bg-[rgba(255,255,255,0.15)] px-2 py-1 rounded-md font-semibold">
           <span className="wavingHandAnimation inline-block">👋</span> Hi, I am
           Sumit Das

@@ -10,14 +10,14 @@
 }
 @keyframes backgroundLightUp {
     0%{
-        background: url(https://img.freepik.com/free-vector/violet-watercolor-outer-space-background_23-2149247757.jpg?t=st=1724923400~exp=1724927000~hmac=a2ab695bb3e0bd59390c7c2ae997579004688894c691c0f12ea71f5fa191478f&w=996);
+        background: url(../assets/contactBackground.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         opacity: 0;
     }
     50%, 100%{
-        background: url(https://img.freepik.com/free-vector/violet-watercolor-outer-space-background_23-2149247757.jpg?t=st=1724923400~exp=1724927000~hmac=a2ab695bb3e0bd59390c7c2ae997579004688894c691c0f12ea71f5fa191478f&w=996);
+        background: url(../assets/contactBackground.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
